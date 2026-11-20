@@ -1,0 +1,6 @@
+{
+  "name": "Sunken Sanctum",
+  "description": "A 3D isometric fantasy action game set in overgrown ancient ruins with click-to-move combat, arcane abilities, summoning circles, and glowing cyan portals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
