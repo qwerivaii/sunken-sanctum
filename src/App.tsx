@@ -143,7 +143,7 @@ export default function App() {
   }, [handlePauseToggle, handleRestart, handleStart, handleToggleMute]);
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-[#0d161d]">
+    <div className="relative w-screen h-screen overflow-hidden bg-[#0a0b0d]">
       {/* Isolated WebGL mount container — never re-rendered by HUD state changes */}
       <div ref={canvasMountRef} className="absolute inset-0 w-full h-full" />
 

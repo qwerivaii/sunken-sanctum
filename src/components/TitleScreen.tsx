@@ -5,96 +5,131 @@ interface TitleScreenProps {
 export function TitleScreen({ onStart }: TitleScreenProps) {
   return (
     <div className="fixed inset-0 z-20 flex flex-col justify-between pointer-events-none">
-      {/* Subtle left-edge atmospheric shadow vignette keeping right 65% of live ruins crisp */}
+      {/* Moody sumi-ink asymmetrical vignette keeping the live misty ruins visible on center-right */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(95deg, rgba(9, 17, 23, 0.86) 0%, rgba(9, 17, 23, 0.56) 34%, rgba(9, 17, 23, 0.08) 64%, rgba(9, 17, 23, 0.22) 100%)',
+            'linear-gradient(96deg, rgba(7, 8, 10, 0.9) 0%, rgba(9, 10, 12, 0.62) 34%, rgba(9, 10, 12, 0.14) 64%, rgba(7, 8, 10, 0.36) 100%)',
+        }}
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 h-36 pointer-events-none"
+        style={{
+          background: 'linear-gradient(0deg, rgba(6, 7, 9, 0.85) 0%, rgba(6, 7, 9, 0) 100%)',
         }}
       />
 
       {/* Top safe spacer */}
       <div className="h-10" />
 
-      {/* Left-third Title Lockup & Start CTA over calm negative space */}
-      <main className="relative z-10 px-10 md:px-16 max-w-xl flex flex-col items-start gap-6">
-        {/* Bespoke inline SVG crest & display title lockup */}
-        <div className="flex flex-col items-start gap-3">
+      {/* Left-third Phantom Blade Zero calligraphic ink-and-steel lockup */}
+      <main className="relative z-10 px-10 md:px-16 max-w-2xl flex flex-col items-start gap-7">
+        {/* Bespoke inline SVG ink-wash crest & wide-tracked silver-bone title */}
+        <div className="flex flex-col items-start">
           <svg
-            viewBox="0 0 360 118"
-            className="w-[310px] md:w-[360px] h-auto overflow-visible"
+            viewBox="0 0 430 144"
+            className="w-[330px] md:w-[430px] h-auto overflow-visible"
             role="img"
             aria-label="Sunken Sanctum"
           >
-            {/* Ancient runic archway emblem */}
-            <g transform="translate(0, 6)">
-              <path
-                d="M16 56 L16 26 C16 12 46 12 46 26 L46 56"
-                fill="none"
-                stroke="#9c865b"
-                strokeWidth="3.5"
-                strokeLinecap="round"
+            {/* Subtle ink-wash horizontal slash behind title */}
+            <path
+              d="M6 68 Q95 54 218 65 T412 58 L394 82 Q245 92 108 84 T2 80 Z"
+              fill="#050608"
+              fillOpacity="0.62"
+            />
+            {/* Delicate diagonal blade gleam */}
+            <line
+              x1="14"
+              y1="106"
+              x2="372"
+              y2="106"
+              stroke="#b9b1a3"
+              strokeWidth="0.9"
+              strokeOpacity="0.48"
+            />
+            <polygon points="372,106 382,103.5 390,106 382,108.5" fill="#d69b27" fillOpacity="0.85" />
+
+            {/* Vertical vermilion hanko-style blade seal on far left */}
+            <g transform="translate(8, 22)">
+              <rect
+                x="0"
+                y="0"
+                width="26"
+                height="66"
+                fill="#7f1319"
+                fillOpacity="0.88"
+                stroke="#c93b42"
+                strokeWidth="1"
               />
-              <path
-                d="M23 56 L23 28 C23 20 39 20 39 28 L39 56"
+              <rect
+                x="3.5"
+                y="3.5"
+                width="19"
+                height="59"
                 fill="none"
-                stroke="#46efff"
-                strokeWidth="1.8"
-                strokeOpacity="0.88"
+                stroke="#f0e7d8"
+                strokeOpacity="0.45"
+                strokeWidth="0.7"
               />
-              <polygon points="31,24 36,34 31,44 26,34" fill="#63f7ff" />
-              <line x1="10" y1="56" x2="52" y2="56" stroke="#7d6b4a" strokeWidth="3" />
+              {/* Stylized archaic blade-and-gate rune inside seal */}
+              <path
+                d="M13 11 L13 54 M8 22 L18 22 M7 36 L13 30 L19 36 M9 47 L17 47"
+                stroke="#f2eadc"
+                strokeWidth="1.6"
+                strokeLinecap="square"
+                fill="none"
+              />
             </g>
 
-            {/* Carved Title Typography */}
+            {/* Primary Bone-Silver Display Title */}
             <text
-              x="66"
-              y="46"
-              fill="#e9f4f2"
-              stroke="#071117"
-              strokeWidth="4"
+              x="50"
+              y="58"
+              fill="#ece8df"
+              stroke="#07080a"
+              strokeWidth="3.5"
               paintOrder="stroke fill"
-              fontFamily="Cinzel, Georgia, serif"
-              fontWeight="700"
-              fontSize="36"
-              letterSpacing="5"
+              fontFamily="Cinzel, 'Cormorant Garamond', Georgia, serif"
+              fontWeight="600"
+              fontSize="38"
+              letterSpacing="9"
             >
               SUNKEN
             </text>
             <text
-              x="66"
-              y="84"
-              fill="#5ef4ff"
-              stroke="#071117"
-              strokeWidth="4"
+              x="50"
+              y="95"
+              fill="#d5cfc2"
+              stroke="#07080a"
+              strokeWidth="3.5"
               paintOrder="stroke fill"
-              fontFamily="Cinzel, Georgia, serif"
-              fontWeight="700"
+              fontFamily="Cinzel, 'Cormorant Garamond', Georgia, serif"
+              fontWeight="600"
               fontSize="34"
-              letterSpacing="6"
+              letterSpacing="11"
             >
               SANCTUM
             </text>
 
-            {/* Engraved rule line & subtitle */}
-            <line x1="66" y1="97" x2="294" y2="97" stroke="#8c7955" strokeWidth="1.5" strokeOpacity="0.7" />
+            {/* Quiet classical subtitle under blade rule */}
             <text
-              x="66"
-              y="113"
-              fill="#a8c2bd"
-              fontFamily="Inter, system-ui, sans-serif"
+              x="50"
+              y="126"
+              fill="#b8b0a1"
+              fontFamily="'Cormorant Garamond', Georgia, serif"
               fontWeight="600"
-              fontSize="11"
-              letterSpacing="3.4"
+              fontSize="16"
+              letterSpacing="4.5"
             >
-              LEVEL I · RIFT OF THE OVERGROWN
+              ACT I · RIFT OF THE OVERGROWN
             </text>
           </svg>
         </div>
 
-        {/* Single primary Start CTA */}
-        <div className="pointer-events-auto flex items-center gap-4 pt-1">
+        {/* Phantom Blade Zero Bonfire-style feathered ink-brush Start CTA */}
+        <div className="pointer-events-auto flex flex-col items-start gap-2 pl-1">
           <button
             type="button"
             data-start="true"
@@ -102,20 +137,35 @@ export function TitleScreen({ onStart }: TitleScreenProps) {
               e.currentTarget.blur();
               onStart();
             }}
-            className="group relative flex items-center gap-3 px-8 py-3.5 bg-[#12333e] hover:bg-[#194756] active:translate-y-px text-[#e8fcff] border-2 border-[#4ae8ff]/80 shadow-[0_8px_24px_rgba(0,0,0,0.65)] transition-colors cursor-pointer"
+            className="group relative flex items-center gap-4 min-w-[272px] px-7 py-3.5 pbz-ink-ribbon hover:pbz-ink-ribbon-crimson focus-visible:pbz-ink-ribbon-crimson focus-visible:outline-none text-left cursor-pointer transition-transform duration-150 active:translate-y-px"
           >
-            <svg viewBox="0 0 20 20" className="w-4 h-4 fill-[#5bf6ff]" aria-hidden="true">
-              <polygon points="4,2 18,10 4,18" />
-            </svg>
-            <span className="text-base font-bold tracking-[0.22em] uppercase">Enter Ruins</span>
+            {/* Subtle top/bottom steel hairlines that brighten crimson-gold on hover */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#9b9487]/65 to-transparent group-hover:via-[#d9363e]"
+            />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-4 bottom-0 h-px bg-gradient-to-r from-transparent via-[#9b9487]/55 to-transparent group-hover:via-[#d69b27]"
+            />
+
+            {/* Vermilion diamond selection marker (exact PBZ Bonfire menu cue) */}
+            <span
+              aria-hidden="true"
+              className="w-2.5 h-2.5 rotate-45 bg-[#c92831] border border-[#f2d6d8]/75 shadow-[0_0_10px_rgba(201,40,49,0.75)] shrink-0 transition-transform duration-150 group-hover:scale-110"
+            />
+
+            <span className="font-display text-base font-semibold tracking-[0.28em] text-[#f2eee6] group-hover:text-white whitespace-nowrap hud-text-shadow">
+              ENTER RUINS
+            </span>
           </button>
         </div>
       </main>
 
       {/* Single flat borderless control-hint line in bottom safe margin */}
       <div className="relative z-10 px-10 md:px-16 pb-7 flex items-center justify-between">
-        <p className="font-ui text-xs tracking-[0.14em] uppercase text-[#a3bebc] hud-text-shadow">
-          Click Move &amp; Attack · WASD Move · 1–4 Abilities · Space Strike · P Pause
+        <p className="font-ui text-xs tracking-[0.14em] text-[#a7a196] hud-text-shadow">
+          Click Move &amp; Attack · WASD Move · 1–4 Arts · Space Strike · P Pause
         </p>
       </div>
     </div>

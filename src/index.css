@@ -9,9 +9,9 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #0d161d;
-    color: #e6efe8;
-    font-family: 'Cinzel', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+    background-color: #0a0b0d;
+    color: #e6e2da;
+    font-family: 'Cormorant Garamond', 'Cinzel', Georgia, serif;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -20,8 +20,16 @@
   }
 }
 
+.font-display {
+  font-family: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-serif-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
 .font-ui {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .tabular-nums {
@@ -29,29 +37,68 @@
 }
 
 .hud-text-shadow {
-  text-shadow: 0 2px 6px rgba(5, 11, 16, 0.92), 0 0 2px rgba(5, 11, 16, 0.95);
+  text-shadow:
+    0 1px 4px rgba(5, 6, 8, 0.96),
+    0 2px 12px rgba(0, 0, 0, 0.85);
 }
 
 .hud-stroke {
   paint-order: stroke fill;
-  -webkit-text-stroke: 2px rgba(6, 13, 18, 0.88);
+  -webkit-text-stroke: 2px rgba(7, 7, 9, 0.92);
+}
+
+/* Phantom Blade Zero beveled blade-bar clip paths */
+@utility pbz-bar-blade {
+  clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 100%, 0 100%);
+}
+
+@utility pbz-bar-boss {
+  clip-path: polygon(7px 0, 100% 0, calc(100% - 7px) 100%, 0 100%);
+}
+
+/* Feathered sumi-e ink brush ribbon for menu items & CTAs */
+@utility pbz-ink-ribbon {
+  background: linear-gradient(
+    90deg,
+    rgba(8, 8, 10, 0) 0%,
+    rgba(10, 10, 12, 0.88) 14%,
+    rgba(10, 10, 12, 0.92) 78%,
+    rgba(8, 8, 10, 0) 100%
+  );
+}
+
+@utility pbz-ink-ribbon-crimson {
+  background: linear-gradient(
+    90deg,
+    rgba(128, 18, 24, 0) 0%,
+    rgba(140, 22, 28, 0.56) 14%,
+    rgba(18, 10, 12, 0.92) 48%,
+    rgba(130, 18, 24, 0.42) 84%,
+    rgba(128, 18, 24, 0) 100%
+  );
 }
 
 @keyframes floatDamageUp {
   0% {
     opacity: 0;
-    transform: translate(-50%, 6px) scale(0.75);
+    transform: translate(-50%, 6px) scale(0.78);
   }
-  18% {
+  16% {
     opacity: 1;
-    transform: translate(-50%, -8px) scale(1.08);
+    transform: translate(-50%, -10px) scale(1.1);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -44px) scale(0.92);
+    transform: translate(-50%, -46px) scale(0.92);
   }
 }
 
 .combat-float-anim {
-  animation: floatDamageUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: floatDamageUp 0.92s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .combat-float-anim {
+    animation-duration: 0.35s;
+  }
 }
